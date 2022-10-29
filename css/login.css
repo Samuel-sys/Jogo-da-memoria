@@ -1,0 +1,62 @@
+
+/*Coloca o formulario no centro independete do tamanho da tela*/
+.login-form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+}
+
+
+/*Colocar o cabeçalho (nome do jogo e logo tipo) centralizado com
+a imagem tendo o tamanho de 100px*/
+.login_header {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.login_header img {
+  width: 100px;
+  /*Eu prefito com 25% mas vamos seguir o tutorial*/
+}
+
+.login_herder h1{
+    color: #ccc;
+    font-size: 1.5em;
+}
+
+.login_input {
+    border: 2px solid #333;
+    border-radius: 8px;
+    color: #333;
+    font-size: 1em;
+    margin-bottom: 15px;
+    max-width: 300px;
+    outline: none;
+    padding: 15px;
+    width: 100%;
+
+    /*Eu prefito centrarizado o nome que o usuario digita mas isso não foi usado no tutorial */
+    text-align: center;
+}
+
+.login_button{
+    border-radius: 8px;
+    background-color: #EE665C;
+    color: #FFF;
+    cursor: pointer;
+    font-size: 1em;
+    max-width: 300px;
+    padding: 15px;
+    width: 100%;
+}
+
+.login_button:disabled{
+    background-color: #eee;
+    color: #aaa;
+    cursor: auto;
+}

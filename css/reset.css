@@ -1,0 +1,11 @@
+/* Importando nova fonte para o sistema utilizando a API do google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+/* Reseta todo o arquivo para que facilitar a manipulação dos elementos do site */
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: none;
+    font-family: 'Press Start 2p', cursive;
+}

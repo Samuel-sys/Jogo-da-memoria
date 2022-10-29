@@ -1,0 +1,99 @@
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-image: url('../images/bg.jpg');
+    background-size: cover;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0px 50px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.8);
+    font-size: 1.2em;
+    width: 100%;
+    max-width: 800px;
+    padding: 30px;
+    margin: 0 0 30px;
+    border-radius: 5px;
+}
+
+.grid {
+    display: grid;
+    /* O comando repeat e um loop de repetição. estamos usando ele para infomar que nosso jogo vai ter
+    no maximo 5 cartas por coluna (linha) e que cada carta vai ter 1 fr (1 fração do tamanho total da tela)*/
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    /* Espaçõ entre as cartas */
+    width: 100%;
+    /* Largura em que o grid vai ocupar a tela vai ser de 100% */
+    max-width: 800px;
+    /* Porém, não será pertimitido que ele seja maior que 800px */
+    margin: 0 auto;
+    /* margin de cima e de baixo de 0 px e da esquerda e da direita automatica (colocando o grid no centro da tela)  */
+}
+
+.card {
+    aspect-ratio: 3/4;
+    /* Isso define a proporção da carta assim evitando que a imagem se deforme */
+    width: 100%;
+    background-color: #777;
+    border-radius: 5px;
+    position: relative;
+    /*Coloca como se a area delimitada para os demais elemendos dentro dessa classe*/
+
+    /*Faz com que todas as animações tenha uma execução mais leve*/
+    transition: all 400ms ease;
+
+    /*Perserva o 3D da carta sem essa função a carta so iria inverte a foto da parte de traz com isso ele mostra o outro lado da carta e não o outro lado da foto da parte de traz da carta*/
+    transform-style: preserve-3d;
+}
+
+.face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+    /* Colocando a imagem da carta tanto a parte do back como a do front no centro além de mudar o tamanho
+    da imagem (size) para se adaptar ao espaço disponivel evitando que ela vaze ou deixe algum espaço sobrando */
+    background-size: cover;
+    background-position: center;
+
+    /*Colocamos uma borda pequena involta da carta*/
+    border: solid 1px #39813a;
+    border-radius: 5px;
+    transition: all 1000ms ease;
+
+}
+
+.front {
+    /*Deixa a carta invertida para que quando ela faça a animação de virar a carta ela fique do jeito certo (invertendo a carta já invertira)*/
+    transform: rotateY(180deg);
+
+
+}
+
+/*A parte de traz da carta vai se uma imagem fixa, 
+e além disso estamos fazendo um processo de redefinir o tamanho e possição da imagem no div card na classe face*/
+.back {
+    background-image: url("../images/back.png");
+
+    /*Isso faz com que a parte de traz da imagem dessa classe seja invisível, fazendo com que assim quando ela virar
+    mostra a parte da frente da carta*/
+    backface-visibility: hidden;
+}
+
+/* Criação da animação da carta quando passamos o mouse por cima */
+.reveal-card {
+    transform: rotateY(180deg);
+}
+
+.disable-card {
+    filter: saturate(0);
+    opacity: 0.5;
+}
