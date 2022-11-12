@@ -9,3 +9,19 @@
     border: none;
     font-family: 'Press Start 2p', cursive;
 }
+
+body {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-image: url('../images/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+
+:root {
+    /* clap(Minimo, Ideal, Maximo*/
+    --font-xl: clamp(1.5rem, 4vw + 0.1rem, 2rem);
+    --font-md: clamp(0.7rem, 2vw + 0.1rem, 1rem);
+}

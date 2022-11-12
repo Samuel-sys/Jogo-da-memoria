@@ -2,12 +2,11 @@ main {
     display: flex;
     flex-direction: column;
     width: 100%;
-    background-image: url('../images/bg.jpg');
-    background-size: cover;
-    min-height: 100vh;
     align-items: center;
     justify-content: center;
-    padding: 20px 0px 50px;
+    gap: 25px;
+    padding-top: 2%;
+    padding-bottom: 25px;
 }
 
 header {
@@ -15,11 +14,10 @@ header {
     align-items: center;
     justify-content: space-between;
     background-color: rgba(255, 255, 255, 0.8);
-    font-size: 1.2em;
+    font-size: var(--font-md);
     width: 100%;
     max-width: 800px;
     padding: 30px;
-    margin: 0 0 30px;
     border-radius: 5px;
 }
 
